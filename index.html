@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FCM Center | Family Care Medical Center</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:"Poppins",sans-serif}
+body{background:#eaf6ff;color:#222;overflow-x:hidden}
+header{background:linear-gradient(135deg,#00aaff,#0077ff);color:#fff;text-align:center;padding:30px 10px;border-bottom-left-radius:50px;border-bottom-right-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,0.2)}
+header h1{font-size:2rem;margin-bottom:8px;font-weight:700}
+header p{font-size:1rem;margin-bottom:20px}
+nav{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
+nav button{border:none;background:#fff;color:#0077ff;font-weight:600;padding:10px 25px;border-radius:50px;cursor:pointer;transition:0.3s;font-size:1rem}
+nav button.active,nav button:hover{background:#0077ff;color:#fff;transform:scale(1.05)}
+section{display:none;padding:30px 20px;text-align:center;animation:fade 0.6s ease-in-out}
+section.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.service-btn{background:#fff;color:#0077ff;font-weight:500;padding:15px;border:none;width:90%;max-width:400px;margin:10px auto;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1);transition:0.3s;display:block}
+.service-btn:hover{transform:scale(1.05)}
+.card{background:#fff;padding:20px;margin:15px auto;max-width:600px;border-radius:20px;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+.card h3{color:#0077ff;margin-bottom:10px}
+form input,form select,form textarea{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #ccc;font-size:1rem}
+form button{background:#0077ff;color:#fff;padding:12px 25px;border:none;border-radius:10px;font-size:1rem;cursor:pointer;transition:0.3s}
+form button:hover{background:#005ecc}
+.map-container{margin-top:25px}
+iframe{width:100%;height:300px;border:0;border-radius:15px}
+.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);justify-content:center;align-items:center;z-index:1000}
+.popup-content{background:#fff;padding:30px;border-radius:20px;text-align:center;max-width:300px;width:90%}
+.popup-content h3{margin-bottom:20px;color:#0077ff}
+.popup-content button{margin:8px;padding:10px 20px;border:none;border-radius:10px;cursor:pointer;font-weight:600}
+.email-btn{background:#0077ff;color:#fff}
+.whatsapp-btn{background:#25d366;color:#fff}
+.close-btn{margin-top:15px;background:#ccc;color:#000}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>FCM Center</h1>
+  <p>Family Care Medical Center — 24/7 Emergency</p>
+  <nav>
+    <button class="nav-btn active" data-target="home">Home</button>
+    <button class="nav-btn" data-target="about">About</button>
+    <button class="nav-btn" data-target="contact">Contact</button>
+    <button class="nav-btn" data-target="appointment">Appointment</button>
+  </nav>
+</header>
+
+<!-- Home Section -->
+<section id="home" class="active">
+  <h2>Welcome to Family Care Medical Center</h2>
+  <p>Professional healthcare with compassion and care.</p><br>
+
+  <button class="service-btn" data-target="gp">General Physician</button>
+  <button class="service-btn" data-target="gyn">Gynecology & Obstetrics</button>
+  <button class="service-btn" data-target="ent">ENT & Surgery</button>
+  <button class="service-btn" data-target="radio">Radiology & Ultrasound</button>
+  <button class="service-btn" data-target="uro">Urology & Orthopedics</button>
+
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps?q=Family%20Care%20Medical%20Center&output=embed"></iframe>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <h2>About Family Care Medical Center</h2>
+  <p>We are a 24/7 multi-specialty clinic providing modern healthcare facilities and experienced doctors across all departments.</p>
+
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps?q=Family%20Care%20Medical%20Center&output=embed"></iframe>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="card">
+    <h3>Address:</h3>
+    <p>Main Road, Islamabad, Pakistan</p>
+    <h3>Phone:</h3>
+    <p>+92 349 4283614</p>
+    <h3>Email:</h3>
+    <p>info@fcmcenter.com</p>
+  </div>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps?q=Family%20Care%20Medical%20Center&output=embed"></iframe>
+  </div>
+</section>
+
+<!-- Appointment Section -->
+<section id="appointment">
+  <h2>Book an Appointment</h2>
+  <form id="appointmentForm">
+    <input type="text" placeholder="Full Name" required>
+    <input type="number" placeholder="Phone Number" required>
+    <select required>
+      <option value="">Select Doctor</option>
+      <option>Dr. Ahmed (General Physician)</option>
+      <option>Dr. Sara (Gynecologist)</option>
+      <option>Dr. Imran (ENT Specialist)</option>
+      <option>Dr. Ayesha (Radiologist)</option>
+      <option>Dr. Kamran (Orthopedic)</option>
+    </select>
+    <input type="date" required>
+    <input type="time" required>
+    <textarea rows="3" placeholder="Describe your issue"></textarea>
+    <button type="submit">Send Request</button>
+  </form>
+  <div class="map-container">
+    <iframe src="https://www.google.com/maps?q=Family%20Care%20Medical%20Center&output=embed"></iframe>
+  </div>
+</section>
+
+<!-- Doctor Detail Sections -->
+<section id="gp">
+  <h2>General Physician</h2>
+  <div class="card"><h3>Dr. Ahmed Khan</h3><p>MBBS, FCPS – Internal Medicine</p><p>Contact: +92 300 1112233</p></div>
+  <div class="card"><h3>Dr. Bilal Hussain</h3><p>MBBS – Family Medicine</p><p>Contact: +92 322 4435566</p></div>
+</section>
+
+<section id="gyn">
+  <h2>Gynecology & Obstetrics</h2>
+  <div class="card"><h3>Dr. Sara Malik</h3><p>MBBS, FCPS – Gynecology</p><p>Contact: +92 333 2211000</p></div>
+  <div class="card"><h3>Dr. Maryam Aziz</h3><p>MBBS – Obstetric Specialist</p><p>Contact: +92 345 9876543</p></div>
+</section>
+
+<section id="ent">
+  <h2>ENT & Surgery</h2>
+  <div class="card"><h3>Dr. Imran Qureshi</h3><p>MBBS, MS – ENT</p><p>Contact: +92 300 6677889</p></div>
+  <div class="card"><h3>Dr. Hina Tariq</h3><p>MBBS – ENT Surgeon</p><p>Contact: +92 301 9988776</p></div>
+</section>
+
+<section id="radio">
+  <h2>Radiology & Ultrasound</h2>
+  <div class="card"><h3>Dr. Ayesha Shah</h3><p>MBBS, FCPS – Radiologist</p><p>Contact: +92 333 1144778</p></div>
+  <div class="card"><h3>Dr. Faisal Javed</h3><p>MBBS – Sonologist</p><p>Contact: +92 322 5566778</p></div>
+</section>
+
+<section id="uro">
+  <h2>Urology & Orthopedics</h2>
+  <div class="card"><h3>Dr. Kamran Ali</h3><p>MBBS, FCPS – Urologist</p><p>Contact: +92 321 7766554</p></div>
+  <div class="card"><h3>Dr. Sana Javed</h3><p>MBBS, D.Ortho – Orthopedic Specialist</p><p>Contact: +92 333 4455667</p></div>
+</section>
+
+<!-- Popup for send request -->
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h3>Send Request Via</h3>
+    <button class="email-btn">Email</button>
+    <button class="whatsapp-btn">WhatsApp</button><br>
+    <button class="close-btn" onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<script>
+const navBtns=document.querySelectorAll(".nav-btn");
+const sections=document.querySelectorAll("section");
+navBtns.forEach(btn=>{
+ btn.addEventListener("click",()=>{
+  navBtns.forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+  const target=btn.dataset.target;
+  sections.forEach(s=>s.classList.remove("active"));
+  document.getElementById(target).classList.add("active");
+ });
+});
+document.querySelectorAll(".service-btn").forEach(btn=>{
+ btn.addEventListener("click",()=>{
+  const target=btn.dataset.target;
+  sections.forEach(s=>s.classList.remove("active"));
+  document.getElementById(target).classList.add("active");
+ });
+});
+document.getElementById("appointmentForm").addEventListener("submit",e=>{
+ e.preventDefault();
+ document.getElementById("popup").style.display="flex";
+});
+function closePopup(){document.getElementById("popup").style.display="none";}
+</script>
+
+</body>
+</html>
